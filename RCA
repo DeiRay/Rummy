@@ -1,0 +1,32 @@
+package org.example;
+
+import io.appium.java_client.android.AndroidDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+
+import java.net.MalformedURLException;
+import java.net.URL;
+
+public class Main {
+    public static void main(String[] args) throws MalformedURLException {
+        System.out.println("Hello world!");
+
+
+
+        DesiredCapabilities ds = new DesiredCapabilities();
+        ds.setCapability("deviceName","RZ8R3110DXP");
+        ds.setCapability("platformVersion","12");
+        ds.setCapability("platformName","Android");
+        ds.setCapability("appPackage","apps.rummycircle.com.mobilerummy");
+        ds.setCapability("appActivity","apps.rummycircle.com.mobilerummy.activities.UserActivityNew");
+
+        AndroidDriver driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"),ds);
+        try {
+            Thread.sleep(30000);
+        }catch (Exception e){
+
+        }
+        System.out.println("Test Complete");
+
+
+    }
+}
